@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="정비사업 현장 6년, 재개발·재건축을 설계한 건축가의 시각으로 경매 투자를 분석합니다. 2030 직장인을 위한 실전 강의 준비 중."/>
+<meta name="keywords" content="정비사업,재개발,재건축,경매,부동산투자,강의"/>
+<meta property="og:title" content="박정훈 | 정비사업 건축가 & 경매 투자자"/>
+<meta property="og:description" content="재개발·재건축을 직접 설계한 건축가가 경매 투자를 분석합니다. 2030 직장인을 위한 실전 강의 포트폴리오."/>
+<meta property="og:type" content="website"/>
+<title>박정훈 | 정비사업 건축가 & 경매 투자자</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#141414;--bg2:#1c1c1c;--bg3:#242424;
+  --white:#f5f5f5;--gray:#888;--gray2:#333;
+  --accent:#c8a97e;--accent2:#a8865a;
+  --font:'Noto Sans KR',sans-serif;
+}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font);background:var(--bg);color:var(--white);-webkit-font-smoothing:antialiased;}
+
+/* NAV */
+#site-nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 60px;height:60px;
+  background:rgba(20,20,20,.92);
+  border-bottom:1px solid var(--gray2);
+  backdrop-filter:blur(8px);
+}
+.nav-logo{font-size:15px;font-weight:700;letter-spacing:.1em;color:var(--white);text-decoration:none;}
+.nav-logo em{color:var(--accent);font-style:normal;}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{font-size:12px;font-weight:400;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.1em;text-transform:uppercase;transition:color .2s;}
+.nav-links a:hover{color:var(--white);}
+.nav-cta{font-size:11px;font-weight:700;letter-spacing:.1em;padding:9px 22px;border:1px solid var(--accent);color:var(--accent);text-decoration:none;text-transform:uppercase;transition:all .2s;}
+.nav-cta:hover{background:var(--accent);color:var(--bg);}
+
+/* HERO */
+#hero{
+  position:relative;min-height:100vh;
+  display:flex;align-items:flex-end;overflow:hidden;background:var(--bg);
+}
+.hero-video-wrap{
+  position:absolute;inset:0;z-index:0;overflow:hidden;
+}
+.hero-video-wrap video{
+  width:100%;height:100%;object-fit:cover;
+}
+.hero-video-wrap::after{
+  content:'';position:absolute;inset:0;
+  background:rgba(10,10,10,.65);
+}
+.hero-photo{display:none;}
+.hero-content{position:relative;z-index:2;padding:0 60px 80px;max-width:660px;}
+.hero-tag{font-size:12px;font-weight:500;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+.hero-tag::before{content:'';display:block;width:32px;height:1px;background:var(--accent);}
+.hero-name{font-size:80px;font-weight:900;line-height:.95;letter-spacing:-.03em;color:var(--white);margin-bottom:20px;}
+.hero-title{font-size:16px;font-weight:300;color:var(--gray);letter-spacing:.06em;margin-bottom:36px;}
+.hero-desc{font-size:14px;font-weight:300;color:rgba(255,255,255,.45);line-height:1.9;max-width:420px;margin-bottom:48px;}
+.hero-btns{display:flex;gap:14px;align-items:center;}
+.hero-btn{font-size:11px;font-weight:700;letter-spacing:.12em;padding:13px 30px;background:var(--accent);color:var(--bg);text-decoration:none;text-transform:uppercase;transition:background .2s;}
+.hero-btn:hover{background:var(--accent2);}
+.hero-btn-ghost{font-size:11px;font-weight:500;letter-spacing:.1em;color:rgba(255,255,255,.45);text-decoration:none;text-transform:uppercase;display:flex;align-items:center;gap:8px;transition:color .2s;}
+.hero-btn-ghost:hover{color:var(--white);}
+.hero-btn-ghost::after{content:'→';transition:transform .2s;}
+.hero-btn-ghost:hover::after{transform:translateX(4px);}
+.hero-scroll{position:absolute;bottom:32px;right:60px;z-index:2;font-size:10px;letter-spacing:.14em;color:var(--gray2);text-transform:uppercase;writing-mode:vertical-rl;display:flex;align-items:center;gap:12px;}
+.hero-scroll::after{content:'';display:block;width:1px;height:48px;background:var(--gray2);}
+
+/* STATS */
+#stats-bar{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--gray2);border-bottom:1px solid var(--gray2);}
+.stat-item{padding:36px 48px;border-right:1px solid var(--gray2);}
+.stat-item:last-child{border-right:none;}
+.stat-item.accent{background:var(--accent);}
+.stat-num{font-size:48px;font-weight:900;line-height:1;letter-spacing:-.03em;color:var(--accent);margin-bottom:6px;}
+.stat-item.accent .stat-num{color:var(--bg);font-size:56px;}
+.stat-label{font-size:11px;font-weight:400;letter-spacing:.1em;color:var(--gray);text-transform:uppercase;}
+.stat-item.accent .stat-label{color:rgba(20,20,20,.6);}
+
+/* ABOUT */
+#about{padding:100px 60px;display:grid;grid-template-columns:400px 1fr;gap:100px;align-items:start;border-bottom:1px solid var(--gray2);}
+.about-photo{aspect-ratio:3/4;background:var(--bg2);display:flex;align-items:flex-end;padding:20px;position:sticky;top:80px;overflow:hidden;}
+/* 실제 프로필 사진: .about-photo img{width:100%;height:100%;object-fit:cover;} */
+.about-photo-label{font-size:10px;letter-spacing:.12em;color:var(--gray2);text-transform:uppercase;}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-bottom:16px;}
+.about-right h2{font-size:42px;font-weight:700;letter-spacing:-.02em;line-height:1.2;color:var(--white);margin-bottom:28px;}
+.about-body{font-size:14px;font-weight:300;color:var(--gray);line-height:2.0;margin-bottom:52px;}
+.skill-rows{border-top:1px solid var(--gray2);}
+.skill-row{display:flex;align-items:center;justify-content:space-between;padding:15px 0;border-bottom:1px solid var(--gray2);}
+.skill-name{font-size:13px;font-weight:400;color:var(--white);}
+.skill-badge{font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--accent);text-transform:uppercase;}
+
+/* PROJECTS */
+.proj-section{border-bottom:1px solid var(--gray2);}
+.proj-head{display:flex;align-items:flex-end;justify-content:space-between;padding:64px 60px 40px;}
+.proj-head-left .num{font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--accent);text-transform:uppercase;margin-bottom:8px;}
+.proj-head-left h2{font-size:36px;font-weight:700;letter-spacing:-.02em;color:var(--white);line-height:1;}
+.proj-head-left p{font-size:13px;color:var(--gray);font-weight:300;margin-top:6px;}
+.view-all{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--gray);border:1px solid var(--gray2);padding:10px 22px;text-transform:uppercase;cursor:pointer;background:transparent;transition:all .2s;}
+.view-all:hover{color:var(--accent);border-color:var(--accent);}
+.grid-wrap{padding:0 60px;background:var(--bg);}
+.thumb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--gray2);}
+.thumb-card{background:var(--bg2);cursor:pointer;overflow:hidden;position:relative;}
+.thumb-img{width:100%;aspect-ratio:4/3;background:var(--bg3);position:relative;overflow:hidden;}
+.thumb-img-inner{width:100%;height:100%;background:linear-gradient(135deg,#252525,#1c1c1c);display:flex;align-items:center;justify-content:center;color:var(--gray2);font-size:11px;letter-spacing:.06em;transition:transform .5s ease;}
+/* 실제 이미지: .thumb-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;} */
+.thumb-card:hover .thumb-img-inner{transform:scale(1.06);}
+.thumb-overlay{position:absolute;inset:0;background:rgba(200,169,126,0);display:flex;align-items:center;justify-content:center;transition:background .3s;}
+.thumb-card:hover .thumb-overlay{background:rgba(200,169,126,.12);}
+.overlay-label{font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--white);border:1px solid rgba(255,255,255,.5);padding:8px 20px;text-transform:uppercase;opacity:0;transition:opacity .3s;}
+.thumb-card:hover .overlay-label{opacity:1;}
+.thumb-meta{padding:14px 18px 18px;}
+.thumb-name{font-size:13px;font-weight:500;color:var(--white);margin-bottom:6px;line-height:1.4;}
+.thumb-tags{display:flex;gap:6px;flex-wrap:wrap;}
+.tag{font-size:10px;font-weight:500;letter-spacing:.05em;color:var(--accent);border:1px solid var(--gray2);padding:3px 8px;}
+.more-row{display:flex;justify-content:center;padding:28px 60px;border-top:1px solid var(--gray2);}
+.more-btn{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);background:transparent;border:1px solid var(--gray2);padding:11px 48px;cursor:pointer;transition:all .2s;}
+.more-btn:hover{color:var(--accent);border-color:var(--accent);}
+.proj-pb{padding-bottom:64px;}
+
+/* CTA */
+#lecture-cta{padding:100px 60px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;border-bottom:1px solid var(--gray2);background:var(--bg2);}
+.cta-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--accent);border:1px solid var(--accent);padding:5px 14px;margin-bottom:24px;text-transform:uppercase;}
+.cta-title{font-size:36px;font-weight:900;letter-spacing:-.03em;color:var(--white);line-height:1.1;margin-bottom:20px;white-space:nowrap;}
+.cta-sub{font-size:14px;font-weight:300;color:var(--gray);line-height:1.9;}
+.cta-right{display:flex;flex-direction:column;}
+.cta-items{border-top:1px solid var(--gray2);margin-bottom:40px;}
+.cta-item{display:flex;align-items:flex-start;gap:16px;padding:18px 0;border-bottom:1px solid var(--gray2);}
+.cta-dot{width:5px;height:5px;background:var(--accent);flex-shrink:0;margin-top:5px;}
+.cta-item p{font-size:13px;font-weight:300;color:var(--gray);line-height:1.7;}
+.cta-item p strong{color:var(--white);font-weight:500;}
+.cta-btns{display:flex;gap:12px;}
+.btn-primary{font-size:11px;font-weight:700;letter-spacing:.12em;padding:13px 30px;background:var(--accent);color:var(--bg);text-decoration:none;text-transform:uppercase;transition:background .2s;}
+.btn-primary:hover{background:var(--accent2);}
+.btn-ghost{font-size:11px;font-weight:500;letter-spacing:.1em;padding:13px 30px;border:1px solid var(--gray2);color:var(--gray);text-decoration:none;text-transform:uppercase;transition:all .2s;}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+
+/* LECTURE THUMBS */
+#lecture-thumbs{border-bottom:1px solid var(--gray2);}
+.lec-part{border-top:1px solid var(--gray2);padding-top:48px;margin-bottom:48px;}
+.lec-part-head{display:flex;align-items:flex-start;padding:0 60px 32px;}
+.lec-part-left{display:flex;align-items:flex-start;gap:24px;}
+.lec-part-num{font-size:36px;font-weight:900;letter-spacing:-.02em;color:var(--accent);line-height:1;flex-shrink:0;margin-top:2px;}
+.lec-part-title{font-size:20px;font-weight:700;color:var(--white);margin-bottom:8px;letter-spacing:-.01em;}
+.lec-part-desc{font-size:13px;font-weight:300;color:var(--gray);line-height:1.8;max-width:480px;}
+.lec-thumb{background:linear-gradient(135deg,#1e1a14,#17140f);position:relative;overflow:hidden;}
+.lec-page{width:100%;height:100%;display:flex;flex-direction:column;padding:6px 7px;gap:3px;pointer-events:none;user-select:none;}
+.lec-page-header{height:8px;background:rgba(200,169,126,.35);border-radius:1px;width:60%;}
+.lec-page-line{height:3px;border-radius:1px;background:rgba(255,255,255,.08);}
+.lec-page-line.w90{width:90%}.lec-page-line.w82{width:82%}.lec-page-line.w75{width:75%}
+.lec-page-line.w68{width:68%}.lec-page-line.w55{width:55%}
+.lec-page-img{height:28px;background:rgba(255,255,255,.05);border-radius:1px;margin:2px 0;}
+.lec-page-num{position:absolute;bottom:5px;right:7px;font-size:9px;font-weight:700;letter-spacing:.1em;color:var(--accent);opacity:.7;}
+.lecture-card{cursor:default;}
+.lecture-card:hover .thumb-img-inner{transform:none;}
+.lecture-card .thumb-overlay{display:none;}
+.lecture-card .thumb-meta{padding:10px 14px 12px;}
+.lecture-card .thumb-name{font-size:11px;color:var(--gray);}
+.lecture-card .tag{font-size:9px;}
+.lec-hidden{display:none;}
+
+/* FOOTER */
+#site-footer{padding:24px 60px;display:flex;align-items:center;justify-content:space-between;background:var(--bg);}
+.footer-copy{font-size:11px;color:var(--gray2);letter-spacing:.04em;}
+.footer-nav{display:flex;gap:28px;}
+.footer-nav a{font-size:11px;color:var(--gray2);text-decoration:none;letter-spacing:.08em;text-transform:uppercase;transition:color .2s;}
+.footer-nav a:hover{color:var(--accent);}
+.footer-top{font-size:11px;font-weight:500;color:var(--gray2);text-decoration:none;letter-spacing:.08em;text-transform:uppercase;transition:color .2s;}
+.footer-top:hover{color:var(--accent);}
+
+/* MODAL */
+#modal-project{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.88);align-items:center;justify-content:center;padding:32px;}
+.modal-box{background:var(--bg2);width:100%;max-width:820px;max-height:90vh;overflow-y:auto;position:relative;border:1px solid var(--gray2);}
+.modal-slider{width:100%;aspect-ratio:16/9;background:var(--bg3);display:flex;align-items:center;justify-content:center;color:var(--gray2);font-size:11px;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--gray2);}
+.modal-body{padding:40px 44px 48px;}
+.modal-cat{font-size:10px;font-weight:700;letter-spacing:.16em;color:var(--accent);text-transform:uppercase;margin-bottom:10px;}
+.modal-title{font-size:26px;font-weight:700;letter-spacing:-.01em;color:var(--white);margin-bottom:28px;}
+.modal-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--gray2);margin-bottom:28px;}
+.modal-meta-item{background:var(--bg2);padding:14px 18px;}
+.modal-meta-lbl{font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--gray2);text-transform:uppercase;margin-bottom:5px;}
+.modal-meta-val{font-size:13px;font-weight:500;color:var(--white);}
+.modal-desc{font-size:14px;font-weight:300;color:var(--gray);line-height:2.0;margin-bottom:24px;}
+.modal-tags{display:flex;gap:8px;flex-wrap:wrap;}
+.modal-tag{font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--accent);border:1px solid var(--gray2);padding:4px 12px;text-transform:uppercase;}
+.modal-close{position:absolute;top:0;right:0;width:48px;height:48px;background:var(--bg3);border:none;cursor:pointer;color:var(--gray);font-size:16px;border-left:1px solid var(--gray2);border-bottom:1px solid var(--gray2);transition:all .2s;}
+.modal-close:hover{background:var(--accent);color:var(--bg);}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="site-nav">
+  <a href="#hero" class="nav-logo">박<em>.</em>정훈</a>
+  <ul class="nav-links">
+    <li><a href="#about">소개</a></li>
+    <li><a href="#projects-renovation">정비사업</a></li>
+    <li><a href="#projects-auction">경매</a></li>
+    <li><a href="#lecture-thumbs">강의</a></li>
+  </ul>
+  <a href="#lecture-cta" class="nav-cta">강의 문의</a>
+</nav>
+
+<!-- HERO -->
+<header id="hero">
+  <div class="hero-video-wrap">
+    <video autoplay muted loop playsinline>
+      <source src="https://videos.pexels.com/video-files/2169880/2169880-uhd_2560_1440_30fps.mp4" type="video/mp4"/>
+    </video>
+  </div>
+  <div class="hero-content">
+    <p class="hero-tag">건축가 &amp; 부동산 투자자</p>
+    <h1 class="hero-name">박정훈</h1>
+    <p class="hero-title">정비사업 건축가 · 경매 투자자</p>
+    <p class="hero-desc">재개발·재건축 구역을 직접 설계한 건축가의 시각으로 경매 투자를 분석합니다. 현장 실무 6년, 직접 낙찰한 경험을 2030 직장인과 나눕니다.</p>
+    <div class="hero-btns">
+      <a href="#about" class="hero-btn">About Me</a>
+      <a href="#projects-renovation" class="hero-btn-ghost">프로젝트 보기</a>
+    </div>
+  </div>
+  <span class="hero-scroll">Scroll</span>
+</header>
+
+<!-- STATS -->
+<div id="stats-bar">
+  <div class="stat-item accent"><div class="stat-num">6</div><div class="stat-label">Years Experience</div></div>
+  <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">경매 투자·컨설팅</div></div>
+  <div class="stat-item"><div class="stat-num">12+</div><div class="stat-label">정비사업 프로젝트</div></div>
+  <div class="stat-item"><div class="stat-num" style="font-size:28px;padding-top:10px;">OPEN 예정</div><div class="stat-label">2030 실전 강의</div></div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-photo">
+    <!-- 프로필 사진: <img src="images/profile.jpg" alt="박정훈"/> -->
+    <span class="about-photo-label">Profile Photo</span>
+  </div>
+  <div class="about-right">
+    <p class="eyebrow">About Me</p>
+    <h2>정비사업 현장에서<br>직접 검증한 경험</h2>
+    <p class="about-body">6년간 재개발·재건축 프로젝트를 설계하고 인허가를 직접 이끌었습니다. 구역 지정부터 관리처분까지, 조합과 행정 안에서 실제로 일어나는 일을 알고 있습니다. 그 내부자 시각을 경매 투자와 결합해 2030 직장인이 실전에서 바로 쓸 수 있는 강의로 만들고 있습니다.</p>
+    <div class="skill-rows">
+      <div class="skill-row"><span class="skill-name">정비사업 설계 및 인허가</span><span class="skill-badge">Core</span></div>
+      <div class="skill-row"><span class="skill-name">재개발·재건축 조합 업무</span><span class="skill-badge">Core</span></div>
+      <div class="skill-row"><span class="skill-name">부동산 경매 입찰 전략</span><span class="skill-badge">Invest</span></div>
+      <div class="skill-row"><span class="skill-name">권리분석 및 수익성 분석</span><span class="skill-badge">Invest</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS: 정비사업 -->
+<section id="projects-renovation" class="proj-section">
+  <div class="proj-head">
+    <div class="proj-head-left">
+      <p class="num">01 — 정비사업</p>
+      <h2>Renovation Projects</h2>
+      <p>재개발·재건축 현장 설계 및 인허가 총괄</p>
+    </div>
+    <button class="view-all">View All →</button>
+  </div>
+  <div class="grid-wrap">
+    <div class="thumb-grid" id="reno-proj-grid">
+      <!-- 썸네일 카드 — 이미지는 thumb-img-inner 안에 <img src="..."> 로 교체 -->
+      <div class="thumb-card"><div class="thumb-img"><div class="thumb-img-inner">IMG</div><div class="thumb-overlay"><span class="overlay-label">View Project</span></div></div><div class="thumb-meta"><p class="thumb-name">성북구 장위 재개발 구역</p><div class="thumb-tags"><span class="tag">재개발</span><span class="tag">2022</span></div></div></div>
+      <div class="thumb-card"><div class="thumb-img"><div class="thumb-img-inner">IMG</div><div class="thumb-overlay"><span class="overlay-label">View Project</span></div></div><div class="thumb-meta"><p class="thumb-name">은평구 응암 재건축</p><div class="thumb-tags"><span class="tag">재건축</span><span class="tag">2021</span></div></div></div>
+      <div class="thumb-card"><div class="thumb-img"><div class="thumb-img-inner">IMG</div><div class="thumb-overlay"><span class="overlay-label">View Project</span></div></div><div class="thumb-meta"><p class="thumb-name">동대문구 이문 정비사업</p><div class="thumb-tags"><span class="tag">재개발</span><span class="tag">2023</span></div></div></div>
+      <div class="thumb-card"><div class="thumb-img"><div class="thumb-img-inner">IMG</div><div class="thumb-overlay"><span class="overlay-label">View Project</span></div></div><div class="thumb-meta"><p class="thumb-name">노원구 상계 재건축</p><div class="thumb-tags"><span class="tag">재건축</span><span class="tag">2020</span></div></div></div>
+      <div class="thumb-card"><div class="thumb-img"><div class="thumb-img-inner">IMG</div><div class="thumb-overlay"><span class="overlay-label">View Project</span></div></div><div class="thumb-meta"><p class="thumb-name">강북구 수유 뉴타운</p><div class="thumb-tags"><span class="tag">뉴타운</span><span class="tag">2022</span></div></div></div>
+      <div class="thumb-card"><div class="thumb-img"><div class="thumb-img-inner">IMG</div><div class="thumb-overlay"><span class="overlay-label">View Project</span></div></div><div class="thumb-meta"><p class="thumb-name">도봉구 창동 재개발</p><div class="thumb-tags"><span class="tag">재개발</span><span class="tag">2021</span></div></div></div>
+      <div class="thumb-card"><div class="thumb-img"><div class="thumb-img-inner">IMG</div><div class="thumb-overlay"><span class="overlay-label">View Project</span></div></div><div class="thumb-meta"><p class="thumb-name">중랑구 면목 정비구역</p><div class="thumb-tags"><span class="tag">재건축</span><span class="tag">2023</span></div></div></div>
+      <div class="thumb-card"><div class="thumb-img"><div class="thumb-img-inner">IMG</div><div class="thumb-overlay"><span class="overlay-label">View Project</span></div></div><div class="thumb-meta"><p class="thumb-name">광진구 구의 재개발</p><div class="thumb-tags"><span class="tag">재개발</span><span class="tag">2024</span></div></div></div>
+    </div>
+  </div>
+  <div class="more-row proj-pb"><button class="more-btn">More Projects ↓</button></div>
+</section>
+
+<!-- PROJECTS: 경매 -->
+<section id="projects-auction" class="proj-section">
+  <div class="proj-head">
+    <div class="proj-head-left">
+      <p class="num">02 — 경매</p>
+      <h2>Auction &amp; Consulting</h2>
+      <p>직접 실행한 경매 투자 및 컨설팅 이력</p>
+    </div>
+    <button class="view-all">View All →</button>
+  </div>
+  <div class="grid-wrap">
+    <div class="thumb-grid">
+      <div class="thumb-card"><div class="thumb-img"><div class="thumb-img-inner">IMG</div><div class="thumb-overlay"><span class="overlay-label">View Project</span></div></div><div class="thumb-meta"><p class="thumb-name">노원구 아파트 낙찰</p><div class="thumb-tags"><span class="tag">투자</span><span class="tag">2022</span></div></div></div>
+      <div class="thumb-card"><div class="thumb-img"><div class="thumb-img-inner">IMG</div><div class="thumb-overlay"><span class="overlay-label">View Project</span></div></div><div class="thumb-meta"><p class="thumb-name">도봉구 빌라 낙찰</p><div class="thumb-tags"><span class="tag">투자</span><span class="tag">2023</span></div></div></div>
+      <div class="thumb-card"><div class="thumb-img"><div class="thumb-img-inner">IMG</div><div class="thumb-overlay"><span class="overlay-label">View Project</span></div></div><div class="thumb-meta"><p class="thumb-name">성북구 컨설팅 A</p><div class="thumb-tags"><span class="tag">컨설팅</span><span class="tag">2023</span></div></div></div>
+      <div class="thumb-card"><div class="thumb-img"><div class="thumb-img-inner">IMG</div><div class="thumb-overlay"><span class="overlay-label">View Project</span></div></div><div class="thumb-meta"><p class="thumb-name">강북구 컨설팅 B</p><div class="thumb-tags"><span class="tag">컨설팅</span><span class="tag">2024</span></div></div></div>
+      <div class="thumb-card"><div class="thumb-img"><div class="thumb-img-inner">IMG</div><div class="thumb-overlay"><span class="overlay-label">View Project</span></div></div><div class="thumb-meta"><p class="thumb-name">성동구 오피스텔 낙찰</p><div class="thumb-tags"><span class="tag">투자</span><span class="tag">2023</span></div></div></div>
+      <div class="thumb-card"><div class="thumb-img"><div class="thumb-img-inner">IMG</div><div class="thumb-overlay"><span class="overlay-label">View Project</span></div></div><div class="thumb-meta"><p class="thumb-name">광진구 다세대 낙찰</p><div class="thumb-tags"><span class="tag">투자</span><span class="tag">2024</span></div></div></div>
+      <div class="thumb-card"><div class="thumb-img"><div class="thumb-img-inner">IMG</div><div class="thumb-overlay"><span class="overlay-label">View Project</span></div></div><div class="thumb-meta"><p class="thumb-name">마포구 컨설팅 C</p><div class="thumb-tags"><span class="tag">컨설팅</span><span class="tag">2024</span></div></div></div>
+      <div class="thumb-card"><div class="thumb-img"><div class="thumb-img-inner">IMG</div><div class="thumb-overlay"><span class="overlay-label">View Project</span></div></div><div class="thumb-meta"><p class="thumb-name">중랑구 단독주택 낙찰</p><div class="thumb-tags"><span class="tag">투자</span><span class="tag">2024</span></div></div></div>
+    </div>
+  </div>
+  <div class="more-row proj-pb"><button class="more-btn">More Projects ↓</button></div>
+</section>
+
+<!-- LECTURE CTA -->
+<section id="lecture-cta">
+  <div>
+    <span class="cta-badge">Coming Soon</span>
+    <h2 class="cta-title">정비사업 + 경매 2030 실전 강의</h2>
+    <p class="cta-sub">현장에서 직접 검증한 정비사업 실무와 경매 투자 노하우를 하나의 커리큘럼으로. 이론 없이 실전만 담았습니다.</p>
+  </div>
+  <div class="cta-right">
+    <div class="cta-items">
+      <div class="cta-item"><div class="cta-dot"></div><p><strong>정비사업 구역 분석부터 조합 설립</strong>까지 실무 전 과정</p></div>
+      <div class="cta-item"><div class="cta-dot"></div><p><strong>경매 권리분석 및 낙찰 전략</strong> 실전 케이스 기반</p></div>
+      <div class="cta-item"><div class="cta-dot"></div><p><strong>정비사업 + 경매 연계 투자</strong> 통합 전략</p></div>
+      <div class="cta-item"><div class="cta-dot"></div><p>2030 직장인 기준 <strong>소자본으로 시작하는 로드맵</strong></p></div>
+    </div>
+    <div class="cta-btns">
+      <a href="#" class="btn-primary">카카오로 문의하기</a>
+      <a href="#" class="btn-ghost">이메일 문의 (준비 중)</a>
+    </div>
+  </div>
+</section>
+
+<!-- LECTURE THUMBNAILS -->
+<section id="lecture-thumbs">
+  <div class="proj-head">
+    <div class="proj-head-left">
+      <p class="num">03 — 강의 자료</p>
+      <h2>Lecture Materials</h2>
+      <p>2030 실전 강의 커리큘럼 미리보기</p>
+    </div>
+  </div>
+
+  <!-- A: 원데이 -->
+  <div class="lec-part">
+    <div class="lec-part-head">
+      <div class="lec-part-left">
+        <span class="lec-part-num">A</span>
+        <div>
+          <p class="lec-part-title">원데이 클래스</p>
+          <p class="lec-part-desc">정비사업과 경매의 핵심 개념을 하루 안에 압축한 입문 과정. 처음 시작하는 2030을 위한 가장 빠른 길.</p>
+        </div>
+      </div>
+    </div>
+    <div class="grid-wrap">
+      <div class="thumb-grid" id="oneday-grid"></div>
+    </div>
+    <div class="more-row"><button class="more-btn lec-toggle-btn" data-grid="oneday-grid">More ↓</button></div>
+  </div>
+
+  <!-- B: 정비사업 -->
+  <div class="lec-part">
+    <div class="lec-part-head">
+      <div class="lec-part-left">
+        <span class="lec-part-num">B</span>
+        <div>
+          <p class="lec-part-title">정비사업 강의</p>
+          <p class="lec-part-desc">재개발·재건축 구역 분석부터 조합 설립, 인허가, 수익 분석까지. 현장 6년 경험을 체계적으로 전달하는 정규 과정.</p>
+        </div>
+      </div>
+    </div>
+    <div class="grid-wrap">
+      <div class="thumb-grid" id="reno-grid">
+        <div class="thumb-card lecture-card"><div class="thumb-img"><div class="thumb-img-inner lec-thumb"><div class="lec-page"><div class="lec-page-header"></div><div class="lec-page-line w82"></div><div class="lec-page-line w55"></div><div class="lec-page-img"></div><div class="lec-page-line w90"></div><div class="lec-page-line w75"></div><div class="lec-page-line w68"></div></div><span class="lec-page-num">01</span></div></div><div class="thumb-meta"><p class="thumb-name">파트 01 — 기초·구역분석</p><div class="thumb-tags"><span class="tag">정비사업</span></div></div></div>
+        <div class="thumb-card lecture-card"><div class="thumb-img"><div class="thumb-img-inner lec-thumb"><div class="lec-page"><div class="lec-page-header"></div><div class="lec-page-line w55"></div><div class="lec-page-line w82"></div><div class="lec-page-img"></div><div class="lec-page-line w68"></div><div class="lec-page-line w90"></div><div class="lec-page-line w75"></div></div><span class="lec-page-num">02</span></div></div><div class="thumb-meta"><p class="thumb-name">파트 02 — 인허가·수익분석</p><div class="thumb-tags"><span class="tag">정비사업</span></div></div></div>
+        <div class="thumb-card lecture-card"><div class="thumb-img"><div class="thumb-img-inner lec-thumb"><div class="lec-page"><div class="lec-page-header"></div><div class="lec-page-line w68"></div><div class="lec-page-line w90"></div><div class="lec-page-img"></div><div class="lec-page-line w55"></div><div class="lec-page-line w82"></div><div class="lec-page-line w75"></div></div><span class="lec-page-num">03</span></div></div><div class="thumb-meta"><p class="thumb-name">파트 03 — 조합 설립</p><div class="thumb-tags"><span class="tag">정비사업</span></div></div></div>
+        <div class="thumb-card lecture-card"><div class="thumb-img"><div class="thumb-img-inner lec-thumb"><div class="lec-page"><div class="lec-page-header"></div><div class="lec-page-line w90"></div><div class="lec-page-line w68"></div><div class="lec-page-img"></div><div class="lec-page-line w75"></div><div class="lec-page-line w55"></div><div class="lec-page-line w82"></div></div><span class="lec-page-num">04</span></div></div><div class="thumb-meta"><p class="thumb-name">파트 04 — 사업시행인가</p><div class="thumb-tags"><span class="tag">정비사업</span></div></div></div>
+        <div class="thumb-card lecture-card"><div class="thumb-img"><div class="thumb-img-inner lec-thumb"><div class="lec-page"><div class="lec-page-header"></div><div class="lec-page-line w75"></div><div class="lec-page-line w55"></div><div class="lec-page-img"></div><div class="lec-page-line w82"></div><div class="lec-page-line w68"></div><div class="lec-page-line w90"></div></div><span class="lec-page-num">05</span></div></div><div class="thumb-meta"><p class="thumb-name">파트 05 — 관리처분계획</p><div class="thumb-tags"><span class="tag">정비사업</span></div></div></div>
+        <div class="thumb-card lecture-card"><div class="thumb-img"><div class="thumb-img-inner lec-thumb"><div class="lec-page"><div class="lec-page-header"></div><div class="lec-page-line w82"></div><div class="lec-page-line w75"></div><div class="lec-page-img"></div><div class="lec-page-line w55"></div><div class="lec-page-line w90"></div><div class="lec-page-line w68"></div></div><span class="lec-page-num">06</span></div></div><div class="thumb-meta"><p class="thumb-name">파트 06 — 분양·청산</p><div class="thumb-tags"><span class="tag">정비사업</span></div></div></div>
+        <div class="thumb-card lecture-card"><div class="thumb-img"><div class="thumb-img-inner lec-thumb"><div class="lec-page"><div class="lec-page-header"></div><div class="lec-page-line w55"></div><div class="lec-page-line w82"></div><div class="lec-page-img"></div><div class="lec-page-line w90"></div><div class="lec-page-line w75"></div><div class="lec-page-line w68"></div></div><span class="lec-page-num">07</span></div></div><div class="thumb-meta"><p class="thumb-name">파트 07 — 수익 분석</p><div class="thumb-tags"><span class="tag">정비사업</span></div></div></div>
+        <div class="thumb-card lecture-card"><div class="thumb-img"><div class="thumb-img-inner lec-thumb"><div class="lec-page"><div class="lec-page-header"></div><div class="lec-page-line w68"></div><div class="lec-page-line w55"></div><div class="lec-page-img"></div><div class="lec-page-line w82"></div><div class="lec-page-line w90"></div><div class="lec-page-line w75"></div></div><span class="lec-page-num">08</span></div></div><div class="thumb-meta"><p class="thumb-name">파트 08 — 실전 케이스</p><div class="thumb-tags"><span class="tag">정비사업</span></div></div></div>
+      </div>
+    </div>
+    <div class="more-row"><button class="more-btn lec-toggle-btn" data-grid="reno-grid">More ↓</button></div>
+  </div>
+
+  <!-- C: 경매 -->
+  <div class="lec-part" style="border-bottom:none;">
+    <div class="lec-part-head">
+      <div class="lec-part-left">
+        <span class="lec-part-num">C</span>
+        <div>
+          <p class="lec-part-title">경매 강의</p>
+          <p class="lec-part-desc">권리분석부터 입찰 전략, 낙찰 후 명도까지. 직접 투자·컨설팅한 실전 케이스를 중심으로 배우는 경매 정규 과정.</p>
+        </div>
+      </div>
+    </div>
+    <div class="grid-wrap">
+      <div class="thumb-grid" id="auction-grid">
+        <div class="thumb-card lecture-card"><div class="thumb-img"><div class="thumb-img-inner lec-thumb"><div class="lec-page"><div class="lec-page-header"></div><div class="lec-page-line w68"></div><div class="lec-page-line w90"></div><div class="lec-page-img"></div><div class="lec-page-line w75"></div><div class="lec-page-line w55"></div><div class="lec-page-line w82"></div></div><span class="lec-page-num">01</span></div></div><div class="thumb-meta"><p class="thumb-name">파트 01 — 기초·권리분석</p><div class="thumb-tags"><span class="tag">경매</span></div></div></div>
+        <div class="thumb-card lecture-card"><div class="thumb-img"><div class="thumb-img-inner lec-thumb"><div class="lec-page"><div class="lec-page-header"></div><div class="lec-page-line w90"></div><div class="lec-page-line w68"></div><div class="lec-page-img"></div><div class="lec-page-line w55"></div><div class="lec-page-line w75"></div><div class="lec-page-line w82"></div></div><span class="lec-page-num">02</span></div></div><div class="thumb-meta"><p class="thumb-name">파트 02 — 법원경매 절차</p><div class="thumb-tags"><span class="tag">경매</span></div></div></div>
+        <div class="thumb-card lecture-card"><div class="thumb-img"><div class="thumb-img-inner lec-thumb"><div class="lec-page"><div class="lec-page-header"></div><div class="lec-page-line w55"></div><div class="lec-page-line w75"></div><div class="lec-page-img"></div><div class="lec-page-line w82"></div><div class="lec-page-line w68"></div><div class="lec-page-line w90"></div></div><span class="lec-page-num">03</span></div></div><div class="thumb-meta"><p class="thumb-name">파트 03 — 권리분석</p><div class="thumb-tags"><span class="tag">경매</span></div></div></div>
+        <div class="thumb-card lecture-card"><div class="thumb-img"><div class="thumb-img-inner lec-thumb"><div class="lec-page"><div class="lec-page-header"></div><div class="lec-page-line w82"></div><div class="lec-page-line w55"></div><div class="lec-page-img"></div><div class="lec-page-line w68"></div><div class="lec-page-line w90"></div><div class="lec-page-line w75"></div></div><span class="lec-page-num">04</span></div></div><div class="thumb-meta"><p class="thumb-name">파트 04 — 임차인 분석</p><div class="thumb-tags"><span class="tag">경매</span></div></div></div>
+        <div class="thumb-card lecture-card"><div class="thumb-img"><div class="thumb-img-inner lec-thumb"><div class="lec-page"><div class="lec-page-header"></div><div class="lec-page-line w75"></div><div class="lec-page-line w82"></div><div class="lec-page-img"></div><div class="lec-page-line w90"></div><div class="lec-page-line w55"></div><div class="lec-page-line w68"></div></div><span class="lec-page-num">05</span></div></div><div class="thumb-meta"><p class="thumb-name">파트 05 — 입찰 전략</p><div class="thumb-tags"><span class="tag">경매</span></div></div></div>
+        <div class="thumb-card lecture-card"><div class="thumb-img"><div class="thumb-img-inner lec-thumb"><div class="lec-page"><div class="lec-page-header"></div><div class="lec-page-line w68"></div><div class="lec-page-line w90"></div><div class="lec-page-img"></div><div class="lec-page-line w75"></div><div class="lec-page-line w82"></div><div class="lec-page-line w55"></div></div><span class="lec-page-num">06</span></div></div><div class="thumb-meta"><p class="thumb-name">파트 06 — 낙찰 후 명도</p><div class="thumb-tags"><span class="tag">경매</span></div></div></div>
+        <div class="thumb-card lecture-card"><div class="thumb-img"><div class="thumb-img-inner lec-thumb"><div class="lec-page"><div class="lec-page-header"></div><div class="lec-page-line w90"></div><div class="lec-page-line w55"></div><div class="lec-page-img"></div><div class="lec-page-line w68"></div><div class="lec-page-line w75"></div><div class="lec-page-line w82"></div></div><span class="lec-page-num">07</span></div></div><div class="thumb-meta"><p class="thumb-name">파트 07 — 수익률 분석</p><div class="thumb-tags"><span class="tag">경매</span></div></div></div>
+        <div class="thumb-card lecture-card"><div class="thumb-img"><div class="thumb-img-inner lec-thumb"><div class="lec-page"><div class="lec-page-header"></div><div class="lec-page-line w55"></div><div class="lec-page-line w68"></div><div class="lec-page-img"></div><div class="lec-page-line w90"></div><div class="lec-page-line w82"></div><div class="lec-page-line w75"></div></div><span class="lec-page-num">08</span></div></div><div class="thumb-meta"><p class="thumb-name">파트 08 — 실전 케이스</p><div class="thumb-tags"><span class="tag">경매</span></div></div></div>
+      </div>
+    </div>
+    <div class="more-row"><button class="more-btn lec-toggle-btn" data-grid="auction-grid">More ↓</button></div>
+  </div>
+  <div style="padding-bottom:64px;"></div>
+</section>
+
+<!-- FOOTER -->
+<footer id="site-footer">
+  <p class="footer-copy">© 2026 박정훈. All rights reserved.</p>
+  <nav class="footer-nav">
+    <a href="#about">소개</a>
+    <a href="#projects-renovation">정비사업</a>
+    <a href="#projects-auction">경매</a>
+    <a href="#lecture-thumbs">강의</a>
+  </nav>
+  <a href="#hero" class="footer-top">↑ Top</a>
+</footer>
+
+<!-- MODAL -->
+<div id="modal-project">
+  <div class="modal-box">
+    <button class="modal-close">✕</button>
+    <div class="modal-slider">IMAGE SLIDER</div>
+    <div class="modal-body">
+      <p class="modal-cat">정비사업 · 재개발</p>
+      <h3 class="modal-title">성북구 장위 재개발 구역</h3>
+      <div class="modal-meta">
+        <div class="modal-meta-item"><p class="modal-meta-lbl">기간</p><p class="modal-meta-val">2022.03 — 2023.11</p></div>
+        <div class="modal-meta-item"><p class="modal-meta-lbl">역할</p><p class="modal-meta-val">설계 책임자</p></div>
+        <div class="modal-meta-item"><p class="modal-meta-lbl">규모</p><p class="modal-meta-val">지상 25층 / 480세대</p></div>
+      </div>
+      <p class="modal-desc">장위 뉴타운 재개발 구역의 건축계획 수립 및 인허가 전 과정을 담당하였습니다. 구역 분석부터 사업시행인가 도달까지 설계 책임자로 참여한 프로젝트입니다.</p>
+      <div class="modal-tags">
+        <span class="modal-tag">재개발</span><span class="modal-tag">조합설립</span><span class="modal-tag">사업시행인가</span><span class="modal-tag">서울</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// 원데이 클래스 20페이지
+const pages=[
+  {n:'01',title:'정비사업+경매 투자',lines:['w90','w75','w82','w55']},
+  {n:'02',title:'왜 정비사업 투자인가?',lines:['w75','w90','w55','w68']},
+  {n:'03',title:'왜 경매 투자인가?',lines:['w82','w55','w90','w75']},
+  {n:'04',title:'지역선정',lines:['w55','w82','w68','w90']},
+  {n:'05',title:'법적 근거: 원문 참조',lines:['w68','w90','w75','w55']},
+  {n:'06',title:'도시계획 법률체계',lines:['w90','w68','w82','w75']},
+  {n:'07',title:'제5차 국토종합계획',lines:['w75','w55','w68','w90']},
+  {n:'08',title:'GTX 노선도',lines:['w55','w82','w90','w68']},
+  {n:'09',title:'국토교통부 철도예산',lines:['w82','w75','w55','w90']},
+  {n:'10',title:'2040 서울플랜',lines:['w90','w55','w75','w82']},
+  {n:'11',title:'2040 서울플랜 중심지 체계',lines:['w68','w90','w82','w55']},
+  {n:'12',title:'뉴스 모니터링',lines:['w75','w68','w55','w90']},
+  {n:'13',title:'보도자료 확인',lines:['w90','w82','w68','w75']},
+  {n:'14',title:'왜 상봉동인가?',lines:['w55','w75','w90','w68']},
+  {n:'15',title:'상봉동 현황분석',lines:['w82','w90','w55','w75']},
+  {n:'16',title:'주거생활권 관리방안',lines:['w68','w55','w75','w82']},
+  {n:'17',title:'상봉역 주변 개발 현황',lines:['w90','w75','w68','w55']},
+  {n:'18',title:'정비사업 유형 비교',lines:['w75','w82','w90','w68']},
+  {n:'19',title:'단계별 가격장 (J-Curve)',lines:['w55','w68','w82','w90']},
+  {n:'20',title:'용도지역 확인 방법',lines:['w82','w90','w68','w75']},
+];
+
+const g=document.getElementById('oneday-grid');
+pages.forEach((p,i)=>{
+  g.innerHTML+=`<div class="thumb-card lecture-card${i>=8?' lec-hidden':''}">
+    <div class="thumb-img"><div class="thumb-img-inner lec-thumb">
+      <div class="lec-page">
+        <div class="lec-page-header"></div>
+        <div class="lec-page-line ${p.lines[0]}"></div>
+        <div class="lec-page-line ${p.lines[1]}"></div>
+        <div class="lec-page-img"></div>
+        <div class="lec-page-line ${p.lines[2]}"></div>
+        <div class="lec-page-line ${p.lines[3]}"></div>
+        <div class="lec-page-line w68"></div>
+      </div>
+      <span class="lec-page-num">${p.n}</span>
+    </div></div>
+    <div class="thumb-meta"><p class="thumb-name">${p.n}. ${p.title}</p>
+    <div class="thumb-tags"><span class="tag">원데이</span></div></div>
+  </div>`;
+});
+
+// More/Close 토글 (모든 강의 파트 공용)
+document.querySelectorAll('.lec-toggle-btn').forEach(btn=>{
+  const grid=document.getElementById(btn.dataset.grid);
+  Array.from(grid.children).slice(8).forEach(c=>c.classList.add('lec-hidden'));
+  btn.addEventListener('click',()=>{
+    const expanded=btn.dataset.expanded==='true';
+    if(!expanded){
+      grid.querySelectorAll('.lec-hidden').forEach(c=>c.classList.remove('lec-hidden'));
+      btn.textContent='Close ↑';btn.dataset.expanded='true';
+    } else {
+      Array.from(grid.children).slice(8).forEach(c=>c.classList.add('lec-hidden'));
+      btn.textContent='More ↓';btn.dataset.expanded='false';
+    }
+  });
+});
+
+// 모달
+const modal=document.getElementById('modal-project');
+modal.querySelector('.modal-close').addEventListener('click',()=>{modal.style.display='none';document.body.style.overflow='';});
+modal.addEventListener('click',e=>{if(e.target===modal){modal.style.display='none';document.body.style.overflow='';}});
+document.querySelectorAll('.thumb-card:not(.lecture-card)').forEach(c=>{
+  c.addEventListener('click',()=>{modal.style.display='flex';document.body.style.overflow='hidden';});
+});
+</script>
+</body>
+</html>

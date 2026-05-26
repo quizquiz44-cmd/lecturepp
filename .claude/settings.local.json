@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Copy-Item *)",
+      "PowerShell(Copy-Item *)",
+      "Bash(awk '{print $5, $9}')",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\KYC\\\\Desktop\\\\VibeCoding\\\\redevelopment-auction-lecture\" -Recurse)",
+      "Bash(Select-Object FullName, Length)"
+    ]
+  }
+}
