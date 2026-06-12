@@ -40,7 +40,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--white);-webkit-fon
   border-bottom:1px solid var(--gray2);
   backdrop-filter:blur(8px);
 }
-.nav-logo{font-size:15px;font-weight:700;letter-spacing:.1em;color:var(--white);text-decoration:none;}
+.nav-logo{font-size:12px;font-weight:700;letter-spacing:.03em;color:var(--white);text-decoration:none;white-space:nowrap;}
 .nav-logo em{color:var(--accent);font-style:normal;}
 .nav-links{display:flex;gap:36px;list-style:none;}
 .nav-links a{font-size:12px;font-weight:400;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.1em;text-transform:uppercase;transition:color .2s;}
@@ -65,9 +65,9 @@ body{font-family:var(--font);background:var(--bg);color:var(--white);-webkit-fon
 }
 .hero-photo{display:none;}
 .hero-content{position:relative;z-index:2;padding:0 60px 80px;max-width:660px;}
-.hero-tag{font-size:12px;font-weight:500;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:12px;}
-.hero-tag::before{content:'';display:block;width:32px;height:1px;background:var(--accent);}
-.hero-name{font-size:80px;font-weight:900;line-height:.95;letter-spacing:-.03em;color:var(--white);margin-bottom:20px;}
+.hero-tag{font-size:13px;font-weight:500;letter-spacing:.06em;color:var(--accent);margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+.hero-tag::before{content:'';display:block;width:32px;height:1px;background:var(--accent);flex-shrink:0;}
+.hero-name{font-size:56px;font-weight:900;line-height:1.05;letter-spacing:-.02em;color:var(--white);margin-bottom:20px;}
 .hero-title{font-size:16px;font-weight:300;color:var(--gray);letter-spacing:.06em;margin-bottom:36px;}
 .hero-desc{font-size:14px;font-weight:300;color:rgba(255,255,255,.45);line-height:1.9;max-width:420px;margin-bottom:48px;}
 .hero-btns{display:flex;gap:14px;align-items:center;}
@@ -346,7 +346,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--white);-webkit-fon
 
   /* HERO */
   .hero-content { padding: 0 32px 64px; }
-  .hero-name { font-size: 56px; }
+  .hero-name { font-size: 44px; }
   .hero-desc { max-width: 100%; }
 
   /* STATS */
@@ -392,9 +392,8 @@ body{font-family:var(--font);background:var(--bg);color:var(--white);-webkit-fon
 
   /* HERO */
   .hero-content { padding: 0 20px 52px; max-width: 100%; }
-  .hero-name { font-size: 44px; }
-  .hero-tag { font-size: 11px; margin-bottom: 14px; }
-  .hero-title { font-size: 13px; letter-spacing: .04em; }
+  .hero-name { font-size: 36px; }
+  .hero-tag { font-size: 11px; margin-bottom: 14px; letter-spacing: .04em; }
   .hero-desc { font-size: 13px; max-width: 100%; margin-bottom: 36px; }
   .hero-btns { flex-direction: column; align-items: flex-start; gap: 14px; }
   .hero-btn { padding: 12px 24px; }
@@ -476,7 +475,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--white);-webkit-fon
 
 <!-- NAV -->
 <nav id="site-nav">
-  <a href="#hero" class="nav-logo">박<em>.</em>정훈</a>
+  <a href="#hero" class="nav-logo">법으로 하는 경매, 경매로 하는 재개발 재건축</a>
   <ul class="nav-links">
     <li><a href="#about">소개</a></li>
     <li><a href="#projects-renovation">정비사업</a></li>
@@ -495,10 +494,9 @@ body{font-family:var(--font);background:var(--bg);color:var(--white);-webkit-fon
     </video>
   </div>
   <div class="hero-content">
-    <p class="hero-tag">건축가 &amp; 부동산 투자자</p>
-    <h1 class="hero-name">박정훈</h1>
-    <p class="hero-title">정비사업 건축가 · 경매 투자자</p>
-    <p class="hero-desc">재개발·재건축 구역을 직접 설계한 건축가의 시각으로 경매 투자를 분석합니다. 현장 실무 6년, 직접 낙찰한 경험을 2030 직장인과 나눕니다.</p>
+    <p class="hero-tag">법으로 하는 경매, 경매로 하는 재개발</p>
+    <h1 class="hero-name">2030 부동산 강의</h1>
+    <p class="hero-desc">법적근거로 접근하는 안전한 경매, 경매로 접근하는 편안한 재개발투자</p>
     <div class="hero-btns">
       <a href="#about" class="hero-btn">About Me</a>
       <a href="#projects-renovation" class="hero-btn-ghost">프로젝트 보기</a>
@@ -777,7 +775,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--white);-webkit-fon
 
 <!-- FOOTER -->
 <footer id="site-footer">
-  <p class="footer-copy">© 2026 박정훈. All rights reserved.</p>
+  <p class="footer-copy">© 2026 법경재. All rights reserved.</p>
   <nav class="footer-nav">
     <a href="#about">소개</a>
     <a href="#projects-renovation">정비사업</a>
