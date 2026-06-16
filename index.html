@@ -164,7 +164,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--white);-webkit-fon
 .why-rule{display:block;width:40px;height:2px;background:var(--accent);margin:0 auto 24px;}
 .why-text .why-em{color:var(--white);font-weight:400;}
 @media (max-width:900px){#why-lecture{padding:60px 32px;}#why-lecture .why-title{font-size:34px;}}
-@media (max-width:600px){#why-lecture{padding:48px 20px;}.why-text{font-size:13px;}#why-lecture .why-title{font-size:26px;}}
+@media (max-width:600px){#why-lecture{padding:48px 20px;min-height:auto;}.why-text{font-size:13px;line-height:2.1;}#why-lecture .why-title{font-size:26px;}}
 
 /* COURSE DIAGRAM */
 .course-diagram{max-width:440px;width:100%;margin:0 auto;display:flex;flex-direction:column;}
@@ -394,7 +394,8 @@ body{font-family:var(--font);background:var(--bg);color:var(--white);-webkit-fon
   .more-row { padding: 24px; }
 
   /* CTA */
-  #lecture-cta { grid-template-columns: 1fr; gap: 40px; padding: 60px 32px; }
+  #lecture-cta { padding: 64px 32px; }
+  .cta-head { margin-bottom: 40px; }
   .cta-title { white-space: normal; font-size: 30px; }
 
   /* LECTURE THUMBS — 270px 패딩 해제 */
@@ -417,7 +418,8 @@ body{font-family:var(--font);background:var(--bg);color:var(--white);-webkit-fon
   /* NAV */
   #site-nav { padding: 0 16px; height: 56px; }
   .nav-links { display: none; }
-  .nav-cta { font-size: 10px; padding: 8px 16px; letter-spacing: .08em; }
+  .nav-logo { font-size: 10px; letter-spacing: 0; white-space: normal; line-height: 1.25; margin-right: 12px; }
+  .nav-cta { font-size: 10px; padding: 8px 14px; letter-spacing: .06em; white-space: nowrap; flex-shrink: 0; }
 
   /* HERO */
   .hero-content { padding: 0 20px 52px; max-width: 100%; }
@@ -459,10 +461,11 @@ body{font-family:var(--font);background:var(--bg);color:var(--white);-webkit-fon
   .more-btn { width: 100%; max-width: 320px; }
 
   /* CTA */
-  #lecture-cta { padding: 48px 20px; gap: 28px; }
+  #lecture-cta { padding: 52px 20px; }
+  .cta-head { margin-bottom: 28px; }
   .cta-title { font-size: 22px; }
   .cta-badge { font-size: 9px; padding: 4px 12px; }
-  .cta-sub { font-size: 13px; }
+  .cd-name { font-size: 15px; }
   .cta-item p { font-size: 12px; }
   .cta-btns { flex-direction: column; gap: 10px; }
   .btn-primary, .btn-ghost { display: block; text-align: center; padding: 14px 20px; }
@@ -487,8 +490,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--white);-webkit-fon
   .cal-detail-header { flex-direction: column; gap: 6px; }
 
   /* FOOTER */
-  #site-footer { padding: 20px 16px 24px; flex-direction: column; align-items: flex-start; gap: 14px; }
-  .footer-nav { flex-wrap: wrap; gap: 14px; }
+  #site-footer { padding: 18px 16px; }
 
   /* MODAL */
   #modal-project { padding: 12px; }
