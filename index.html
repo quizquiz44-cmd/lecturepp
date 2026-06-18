@@ -158,13 +158,15 @@ body{font-family:var(--font);background:var(--bg);color:var(--white);-webkit-fon
 /* WHY THIS LECTURE */
 #why-lecture{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:90px 60px;border-bottom:1px solid var(--gray2);background:var(--bg);text-align:center;}
 #why-lecture .num{font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--accent);text-transform:uppercase;margin-bottom:20px;}
-#why-lecture .why-title{white-space:normal;margin-bottom:44px;font-size:48px;}
+#why-lecture .why-title{white-space:normal;margin-bottom:44px;font-size:48px;line-height:1.4;}
 #why-lecture .why-title .kw{color:var(--accent);}
-.why-text{font-size:14px;font-weight:300;color:var(--gray);line-height:2.7;max-width:720px;margin:0 auto;}
+.why-text{font-size:14px;font-weight:300;color:var(--gray);line-height:2.2;max-width:900px;margin:0 auto;}
 .why-rule{display:block;width:40px;height:2px;background:var(--accent);margin:0 auto 24px;}
 .why-text .why-em{color:var(--white);font-weight:400;}
+.why-text strong{font-weight:600;color:var(--white);}
+.why-text .why-close{display:inline-block;color:var(--white);font-weight:500;font-size:22px;letter-spacing:-.01em;}
 @media (max-width:900px){#why-lecture{padding:60px 32px;}#why-lecture .why-title{font-size:34px;}}
-@media (max-width:600px){#why-lecture{padding:48px 20px;min-height:auto;}.why-text{font-size:13px;line-height:2.1;}#why-lecture .why-title{font-size:26px;}}
+@media (max-width:600px){#why-lecture{padding:48px 20px;min-height:auto;}.why-text{font-size:13px;line-height:2.1;}.why-text .why-close{font-size:18px;}#why-lecture .why-title{font-size:26px;}}
 
 /* COURSE DIAGRAM */
 .course-diagram{max-width:440px;width:100%;margin:0 auto;display:flex;flex-direction:column;}
@@ -385,7 +387,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--white);-webkit-fon
 
   /* ABOUT */
   #about { grid-template-columns: 1fr; gap: 40px; padding: 60px 32px; }
-  .about-photo { position: static; max-width: 300px; width: 100%; }
+  .about-photo { position: static; max-width: 300px; width: 100%; margin: 0 auto; }
 
   /* PROJECTS */
   .proj-head { padding: 48px 24px 28px; }
@@ -641,14 +643,8 @@ body{font-family:var(--font);background:var(--bg);color:var(--white);-webkit-fon
 <!-- WHY THIS LECTURE -->
 <section id="why-lecture">
   <span class="why-rule"></span>
-  <p class="num">왜 이 강의인가</p>
-  <h2 class="cta-title why-title">아는 것과, <span class="kw">직접 사는</span> 것은 다릅니다</h2>
-  <p class="why-text">정비사업을 설계해 본 사람과, 경매로 직접 입찰해 본 사람은 보통 다른 사람입니다.<br>
-  이 강의는 그 두 경험을 한 사람에게서 한 번에 배웁니다.<br>
-  도면으로 사업성을 읽고, 법으로 권리관계를 따집니다.<br>
-  감이 아니라 근거로 입찰을 판단하는 기준을 익힙니다.<br>
-  자본은 적고 시간은 많은 2030에게 맞춰, 무리하지 않는 길을 제시합니다.<br>
-  <span class="why-em">왜 사야 하고 왜 사면 안 되는지, 스스로 설명할 수 있게 되는 것이 목표입니다.</span></p>
+  <h2 class="cta-title why-title">왜 경매 강의는 <span class="kw">초급반만</span> 있을까요?<br>왜 경매 강사는 <span class="kw">전업투자자만</span> 있을까요?</h2>
+  <p class="why-text">경매는 법과 판례를 기반으로 합니다. 그렇기에 무조건 안전한 물건이란 없습니다.<br>초급자가 다룰 수 없는 법을 알고 하는 <strong>고급 경매 투자</strong>, 그것이 경매의 본질입니다.<br><br>한 해에 작은 시세차익을 좇아 수십 번을 사고파는 전업 투자는, 직장을 병행하는 우리에게 맞지 않습니다.<br>2년 보유로 양도세 비과세를 최대한 살리는, <span class="why-em">2년에 한 건</span>.<br>어려운 물건을 확실히, 회사를 다니며 한 건씩 제대로 쌓아가는 것이 우리의 정답입니다.<br><br>경매는 부동산을 사는 하나의 도구일 뿐입니다.<br>무엇을 사느냐가 결과를 가르는 시장에서 2030의 무기는 자본이 아니라 시간입니다.<br>정비사업 일정이 불확실해도, 경매로 싸게 사두었다면 언제든 정리하고 나오거나 오래 기다릴 수 있습니다.<br><strong>입지 좋은 물건을 저렴하게 선점하는 것</strong>, 그것이 법을 이용한 경매 재개발 투자입니다.<br>그래서 우리는 정비사업 물건을 경매로 삽니다.<br><br><br><span class="why-close">2030 부동산 투자의 시작, <span style="color:var(--accent)">법.경.재</span>가 함께하겠습니다.</span></p>
 </section>
 
 <!-- LECTURE CTA -->
